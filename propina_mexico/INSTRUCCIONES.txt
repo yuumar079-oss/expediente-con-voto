@@ -1,0 +1,18 @@
+PROYECTO: PROPINA OBLIGATORIA — MÉXICO
+Estado: prueba visual muda, sin narración ni mezcla final.
+
+Render de escena: blender -b -t 4 -P escena.py
+Composición de prueba: python animar.py
+Dependencia de composición: Pillow; se requiere ffmpeg en PATH.
+La escena editable se conserva en restaurante.blend.
+La fuente y el texto aprobado están en fuentes.md y guion_aprobado.json.
+
+Pendiente para terminar:
+1. Configurar AI33_API_KEY de forma privada en el entorno o en .env junto a la skill AI33.
+2. Seleccionar una voz de AI33 y guardar voz_id con prefijo y ai33_speed en perfil.json.
+3. Generar dos tomas corridas del guion: antes del conteo y después.
+4. Sustituir estos tiempos provisionales por las marcas reales de voz.
+5. Añadir tic-toc, sello y mezcla de audio; verificar literalidad, palabras completas, -14 LUFS y pico <= -1 dBTP.
+6. Retirar el aviso de prueba y ajustar el cierre al final real de la narración.
+
+No es un video final listo para publicar. No se han consumido créditos de AI33.
