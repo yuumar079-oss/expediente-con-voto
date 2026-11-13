@@ -10,7 +10,7 @@ Python, Pillow, ffmpeg, Blender y transcripción/alineación local. Reutilizar l
 
 1. Recibir tema, analizar conflictos y proponer opciones si el usuario no especificó caso.
 2. Verificar fuentes oficiales mexicanas vigentes para contenido legal. Definir estado/municipio cuando corresponda. Distinguir votos legales y dilemas morales.
-3. Preparar guion y headline corto, sin prometer viralidad. Esperar aprobación editorial una sola vez; si el usuario ya aprobó, continuar.
+3. Preparar guion y headline corto, sin prometer viralidad. Los guiones tienen aprobación editorial anticipada del usuario. No detenerse a pedir aprobación; continuar automáticamente tras investigar y revisar el guion.
 4. Escenario propio del tema, A azul/B rojo. No forzar carros fuera de tránsito.
 5. Generar voz AI33 en dos tomas separadas por el conteo mudo. La primera termina después de pronunciar la pregunta de voto y ambas opciones. No pedir una aprobación adicional por créditos. Reutilizar audio y tareas existentes; no duplicar POST ambiguos.
 6. Sincronizar palabras y planos a audio real. Montar efectos y renderizar. Verificar imágenes, literalidad, cierre <=0.6 s tras la última palabra, -14 LUFS y <=-1 dBTP.
@@ -29,3 +29,9 @@ Guion, estilo visual y voz de propina en México aprobados. El usuario ya obtuvo
 El usuario detectó que el audio no plantea «¿Quién tiene la razón?» antes de las opciones y autorizó corregirlo. El texto vigente está en propina_mexico/guion_aprobado.json, campo correccion_audio. Generar solo la primera toma corrida con ese texto y reutilizar la segunda toma de la producción existente. No generar nuevas tomas de la segunda parte ni pedir otra aprobación de guion/créditos. Recalcular los tiempos de subtítulos, conteo y planos con el audio corregido; conservar headline «¿PAGAS PROPINA?». No ejecutar el compositor de prueba muda para sustituir el final con voz. Localizar los archivos de produccion existentes en el entorno y actualizar su montaje. Al verificar el nuevo MP4, confirmar explícitamente que se oye la pregunta antes de las opciones y que el conteo no lleva narración. Marcar la corrección como completada solo tras generar y revisar ese MP4.
 
 Regla permanente: cada voto debe narrar la pregunta y describir las alternativas antes del conteo. El conflicto, el voto y la respuesta deben poder entenderse escuchando sin mirar la pantalla.
+
+## Autorización editorial permanente
+
+El usuario declaró: «SI, Y DE AHORA EN ADELANTE APRUEBO TODOS LOS GUIONES». Para los episodios solicitados, investigar, redactar, revisar y producir sin nueva aprobación editorial ni otro OK por créditos. Mantener QA, fuentes mexicanas, voz configurada, comprensión solo con audio y headline propio. No interpretar esto como permiso para publicar automáticamente en redes, cambiar servicios o generar reintentos ilimitados.
+
+Próximos temas solicitados, en orden: herramienta rota/descuento salarial; precio del aparador distinto de caja; fotografía de cliente en publicidad sin autorización. Producir un episodio a la vez. El primero ya tiene guion aprobado en episodios/herramienta_rota/proyecto.json. Entregar un archivo real descargable; no presentar rutas locales como enlaces de descarga.
