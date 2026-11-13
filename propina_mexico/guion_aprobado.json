@@ -42,7 +42,7 @@
     [
       20,
       23,
-      "A: el cliente. B: el restaurante. Vota antes de escuchar la respuesta.",
+      "¿Quién tiene la razón? ¿El cliente que se niega a pagar la propina o el restaurante que exige cobrarla? Vota: A, el cliente; B, el restaurante.",
       "ELIGE A O B"
     ],
     [
@@ -105,5 +105,14 @@
       "Y tú, cuando te atienden excelente… ¿dejas propina por agradecimiento o por presión? Te leo.",
       "¿GRATITUD O PRESIÓN?"
     ]
-  ]
+  ],
+  "headline": "¿PAGAS PROPINA?",
+  "correccion_audio": {
+    "estado": "pendiente_de_generar_y_sincronizar",
+    "motivo": "El voto debe entenderse sin mirar la pantalla.",
+    "texto_voto": "¿Quién tiene la razón? ¿El cliente que se niega a pagar la propina o el restaurante que exige cobrarla? Vota: A, el cliente; B, el restaurante.",
+    "regenerar": "solo primera toma corrida",
+    "conservar": "segunda toma y voz elegida",
+    "tiempos": "Recalcular a partir de audio real; no usar estos tiempos provisionales como límites de voz."
+  }
 }
