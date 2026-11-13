@@ -1,0 +1,75 @@
+{
+  "headline": "¿TE LO DESCUENTAN?",
+  "pais": "México",
+  "tema": "Descuento salarial por herramienta rota",
+  "guion_aprobado": true,
+  "aprobacion_futura": true,
+  "estado": "preparado_para_produccion_no_renderizado",
+  "voz_id": "elevenlabs_JZeTbA8jDZKTeMBPNXrK",
+  "ai33_speed": 1,
+  "formato": {
+    "ancho": 1080,
+    "alto": 1920,
+    "fps": 30
+  },
+  "escenario": "Taller 3D con banco de trabajo y taladro. No reutilizar restaurante ni carros.",
+  "personajes": {
+    "A": {
+      "rol": "trabajador",
+      "color": "#337CF5"
+    },
+    "B": {
+      "rol": "jefe",
+      "color": "#F43E38"
+    }
+  },
+  "tomas": [
+    {
+      "id": "parte1",
+      "texto": "Se le cae el taladro del trabajo… y el jefe le dice: «Lo rompiste, te lo descuento completo de la próxima nómina».\n\nEl empleado reconoce el accidente, pero nunca aceptó ese descuento.\n\nEl jefe insiste: «La herramienta funcionaba cuando te la entregué».\n\n¿Quién tiene la razón? ¿El trabajador que rechaza el descuento o el jefe que quiere recuperar el dinero?\n\nVota: A, el trabajador; B, el jefe."
+    },
+    {
+      "id": "parte2",
+      "texto": "En este caso, el jefe no puede imponer ese descuento completo por su cuenta.\n\nEn México, la Ley Federal del Trabajo permite ciertos descuentos por pérdidas o averías, pero exige cumplir requisitos: el descuento debe acordarse y respetar los límites legales.\n\nAdemás, el trabajador no responde por el desgaste normal de las herramientas ni por daños derivados de su mala calidad.\n\nReconocer un accidente no significa aceptar cualquier cobro.\n\nPero ahora cambia un dato: el empleado rompió el taladro a propósito.\n\n¿Eso cambia su responsabilidad? ¿Y le permitiría al jefe descontarlo como quisiera?\n\nSon dos preguntas distintas. ¿Tú qué opinas?"
+    }
+  ],
+  "conteo": {
+    "segundos": 3,
+    "narracion": false,
+    "efecto": "tic-toc"
+  },
+  "voto_inicial": {
+    "pregunta": "¿Quién tiene la razón?",
+    "opciones": [
+      "A · TRABAJADOR",
+      "B · JEFE"
+    ]
+  },
+  "voto_final": {
+    "pregunta": "¿Romperlo a propósito autoriza cualquier descuento?",
+    "opciones": [
+      "A · SÍ",
+      "B · NO"
+    ]
+  },
+  "fuentes": [
+    {
+      "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LFT.pdf",
+      "articulos": [
+        "110, fracción I",
+        "134, fracción VI"
+      ],
+      "verificacion": "2026-11-12",
+      "notas": "El artículo 110 limita la cantidad exigible por esta vía al salario de un mes; el descuento se conviene y no supera el 30 % del excedente del salario mínimo. No presentarlo como 30 % del salario completo. El 134 VI excluye deterioro por uso, caso fortuito, fuerza mayor y mala calidad/construcción defectuosa."
+    }
+  ],
+  "QA": [
+    "Narrar pregunta y alternativas antes del conteo",
+    "No afirmar que todo accidente elimina cualquier responsabilidad",
+    "No afirmar que daño intencional autoriza descuento unilateral ilimitado",
+    "Ajustar planos y subtítulos a voz real",
+    "Audio -14 LUFS y pico <= -1 dBTP",
+    "Cierre <=0.6 s tras última palabra"
+  ],
+  "entrega": "MP4 real descargable; si no existe entrega nativa, usar únicamente un destino de archivos previamente autorizado por el usuario."
+}
