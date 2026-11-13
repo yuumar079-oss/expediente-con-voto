@@ -3,11 +3,13 @@ from pathlib import Path
 import math,subprocess,json
 P=Path(__file__).resolve().parent;W,H=540,960;FPS=30;D=66
 F=P/'fuentes'
+CONFIG=json.loads((P/'proyecto.json').read_text(encoding='utf-8'))
+HEADLINE=CONFIG['headline']
 def font(n):return ImageFont.truetype(str(F/'BarlowCondensed-Bold.ttf'),n)
 def mono(n):return ImageFont.truetype(str(F/'IBMPlexMono-Regular.ttf'),n)
 BG=(10,17,29);white=(244,241,230);yellow=(255,201,51);blue=(51,124,245);red=(244,62,56)
 segments=[(0,3,'Comiste por quinientos pesos…','¿TIENES QUE PAGAR?'),(3,6,'pero la cuenta llega por quinientos setenta y cinco.','75 PESOS EXTRA'),(6,9,'Los setenta y cinco extra dicen: «Propina, quince por ciento».','PROPINA: 15 %'),(9,12,'El cliente pide que la quiten.','A · RETIREN EL CARGO'),(12,16,'El encargado responde: «Aquí se cobra en todas las mesas. El servicio estuvo bien».','B · AQUÍ SE COBRA'),(16,20,'El cliente acepta pagar su consumo, pero se niega a pagar ese extra.','¿QUIÉN TIENE RAZÓN?'),(20,23,'A: el cliente. B: el restaurante. Vota antes de escuchar la respuesta.','ELIGE A O B'),(23,26,'','VOTA AHORA'),(26,29,'En este caso, tiene razón el cliente.','RAZÓN: CLIENTE A'),(29,33,'En México, la propina es voluntaria.','PROPINA VOLUNTARIA'),(33,38,'Profeco señala que no pueden exigirla ni agregarla a la cuenta sin tu consentimiento.','TÚ DECIDES'),(38,42,'Que el servicio haya sido excelente no convierte ese quince por ciento en una obligación.','NO ES OBLIGATORIA'),(42,46,'Puedes pedir que retiren el cargo y pagar lo consumido.','CONSUMO: $500'),(46,51,'Conserva tu comprobante y, si insisten en imponerlo, puedes denunciar ante Profeco.','CONSERVA EL TICKET'),(51,55,'Pero ahora cambia una cosa: el restaurante pregunta primero','CAMBIAMOS UN DATO'),(55,58,'y el cliente acepta agregarla. ¿Eso cambia tu voto?','AHORA SÍ ACEPTÓ'),(58,66,'Y tú, cuando te atienden excelente… ¿dejas propina por agradecimiento o por presión? Te leo.','¿GRATITUD O PRESIÓN?')]
-(P/'guion_aprobado.json').write_text(json.dumps({'pais':'México','tipo':'caso ficticio ilustrativo','voz':'pendiente de configurar AI33','segmentos_provisionales':segments},ensure_ascii=False,indent=2))
+(P/'guion_aprobado.json').write_text(json.dumps({'pais':'México','tipo':'caso ficticio ilustrativo','voz':'pendiente de configurar AI33','headline':HEADLINE,'segmentos_provisionales':segments},ensure_ascii=False,indent=2))
 bg=Image.open(P/'restaurante.png').convert('RGB').resize((540,540),Image.Resampling.LANCZOS)
 base=Image.new('RGB',(W,H),BG);base.paste(bg,(0,215));shade=Image.new('RGBA',(W,H));ds=ImageDraw.Draw(shade)
 for y in range(680,790):ds.line((0,y,W,y),fill=(*BG,int(255*(y-680)/110)))
@@ -23,7 +25,7 @@ def wrap(text,f,width):
  return lines
 def frame(t):
  im=base.copy();d=ImageDraw.Draw(im);sg=next(s for s in segments if s[0]<=t<s[1]);start,end,spoken,title=sg
- d.rounded_rectangle((40,122,480,150),radius=7,fill=(26,37,54));d.text((53,128),'EXPEDIENTE 01  /  MÉXICO',font=mono(12),fill=yellow)
+ d.rounded_rectangle((40,122,480,150),radius=7,fill=(26,37,54));center(d,HEADLINE,126,font(21),yellow)
  f=font(38 if len(title)<22 else 32);center(d,title,164,f)
  # Identidad constante de ambas partes.
  for x,c,label in [(42,blue,'A · CLIENTE'),(302,red,'B · RESTAURANTE')]:
